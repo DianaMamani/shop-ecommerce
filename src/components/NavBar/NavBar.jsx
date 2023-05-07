@@ -1,13 +1,13 @@
 import CartWidget from "../CartWidget/CartWidget";
-import "./NavBar.css"
+import {NavItem, NavLink, NavbarNav} from "./styles.jsx"
 
 const itemsList = [
     {
-        name: 'Inicio',
+        name: 'INICIO',
         url: '/'
     },
     {
-        name: 'Productos',
+        name: 'PRODUCTOS',
         url: '/products'
     },
     {
@@ -15,26 +15,23 @@ const itemsList = [
         url: '/on-sale'
     },
     {
-        name: 'Contacto',
+        name: 'CONTACTO',
         url: '/contacto'
     },            
 ]
 
 const NavBar = () => {
     return (
-        <nav className="navigation">
-            <a href="/" className="brand-name">e-boutique</a>
-            <div className="navigation-menu">
-                <ul>
-                    {itemsList.map((item) =>
-                        <li>
-                            <a href={item.url}>{item.name}</a>
-                        </li>)
-                    }
-                </ul>
-            </div>
-            <CartWidget />
-        </nav>        
+        <>
+            <NavbarNav>
+                {itemsList.map((item) =>
+                    <NavItem>
+                        <NavLink href={item.url}>{item.name}</NavLink>
+                    </NavItem>
+                )}
+            </NavbarNav>
+            <CartWidget>2</CartWidget>
+        </>
     )
 }
 

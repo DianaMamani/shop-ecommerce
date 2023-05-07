@@ -1,12 +1,11 @@
-import './App.css';
-import NavBar from './components/NavBar/NavBar';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import { EHeader } from './components/Header/Header';
+import { MainContent } from './components/Content/Content';
 
 function App() {
   return (
     <div className="App">
-      <NavBar/>
-      <ItemListContainer greeting={'Welcome'}/>
+      <EHeader/>
+      <MainContent></MainContent>
     </div>
   );
 }
