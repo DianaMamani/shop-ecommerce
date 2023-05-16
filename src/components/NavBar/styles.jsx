@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const StyledNavbar = styled.nav`
@@ -20,7 +21,7 @@ export const NavItem = styled.li`
   margin-right: 1rem;
 `;
 
-export const NavLink = styled.a`
+export const NavLink = styled(Link)`
   font-size: 14px;
   color: #333333;
   text-decoration: none;

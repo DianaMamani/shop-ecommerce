@@ -14,8 +14,8 @@ const itemsList = [
     },
     {
         id: 3,
-        name: 'SALE',
-        url: '/on-sale'
+        name: 'REMERAS',
+        url: 'categories/shirts'
     },
     {
         id: 4,
@@ -30,7 +30,7 @@ const NavBar = () => {
             <NavbarNav>
                 {itemsList.map((item) =>
                     <NavItem key={item.id}>
-                        <NavLink href={item.url}>{item.name}</NavLink>
+                        <NavLink to={item.url}>{item.name}</NavLink>
                     </NavItem>
                 )}
             </NavbarNav>

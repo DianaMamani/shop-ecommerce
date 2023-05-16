@@ -11,6 +11,7 @@ function App() {
         <Routes>
           <Route path='/' element={<MainContent />} />
           <Route path='/products' element={<ItemListContainer greeting="Welcome to URBAN-B" />} />
+          <Route path='/categories/:id' element={<ItemListContainer />} />
         </Routes>
       </BrowserRouter>
     </div>
