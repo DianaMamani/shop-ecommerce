@@ -10,7 +10,7 @@ export const getProducts = () => {
 
 export const getProductById = (id) => {
     return new Promise((resolve, reject) => {
-        const item = products.find((el) => el.id === id);
+        const item = products.find((el) => el.id == id);
         if (item) {
             resolve(item)
         } else {

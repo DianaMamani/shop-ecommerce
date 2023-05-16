@@ -1,4 +1,5 @@
-import {ItemCard, ItemImage, ItemPrice, ItemTitle} from './styles.jsx';
+import {ItemCard, ItemImage, ItemPrice, ItemTitle, MoreInfoButton} from './styles.jsx';
+import { Link } from 'react-router-dom';
 
 export const Item = ({id, name, img, price, stock, category}) =>{
     return (
@@ -6,10 +7,9 @@ export const Item = ({id, name, img, price, stock, category}) =>{
             <ItemImage src={img} alt={name} />
             <ItemTitle>{name}</ItemTitle>
             <ItemPrice>{"$" + price}</ItemPrice>
-            <div className="d-flex justify-content-center">
-                <button type="button" className="btn btn-sm btn-outline-secondary" style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>Ver mas</button>
-            </div>
-
+            <Link to={`/items/${id}`}>
+                <MoreInfoButton>Ver mas</MoreInfoButton>
+            </Link>
         </ItemCard>
     );
 }
