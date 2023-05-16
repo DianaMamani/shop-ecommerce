@@ -6,8 +6,8 @@ export const Header = () =>{
         <HeaderContainer>
             <ContactLayer>
             </ContactLayer>
-            <BrandLayer>
-                <Brand>URBAN BOUTIQUE</Brand>
+            <BrandLayer>                
+                <Brand to={'/'}>URBAN BOUTIQUE</Brand>
             </BrandLayer>
             <NavbarLayer>
                 <NavBar/>

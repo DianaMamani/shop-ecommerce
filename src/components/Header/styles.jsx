@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const HeaderContainer = styled.header`
   position: fixed;
@@ -27,7 +28,7 @@ export const BrandLayer = styled.div`
   background-color: black;
 `;
 
-export const Brand = styled.a`
+export const Brand = styled(Link)`
   font-size: 1.8rem;
   font-weight: bold;
   color: white;
