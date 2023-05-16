@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-export const Header = styled.header`
+export const HeaderContainer = styled.header`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 60px;
-  background-color: #ffffff;
+  background-color: black;
   z-index: 9999;
 `;
 
@@ -15,7 +15,7 @@ export const ContactLayer = styled.div`
   justify-content: flex-end;
   align-items: center;
   padding: 10px 20px;
-  background-color: #ffd1da;
+  background-color: black;
   color: #ffffff;
 `;
 
@@ -24,13 +24,13 @@ export const BrandLayer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background-color: #ffffff;
+  background-color: black;
 `;
 
 export const Brand = styled.a`
   font-size: 1.8rem;
   font-weight: bold;
-  color: black;
+  color: white;
   text-decoration: none;
   text-align: left;
 `;

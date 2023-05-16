@@ -1,11 +1,10 @@
 import NavBar from "../NavBar/NavBar";
-import { BrandLayer, ContactLayer, Header, Brand, NavbarLayer } from "./styles";
+import { BrandLayer, ContactLayer, HeaderContainer, Brand, NavbarLayer } from "./styles";
 
-export const EHeader = () =>{
+export const Header = () =>{
     return (
-        <Header>
+        <HeaderContainer>
             <ContactLayer>
-                <span> Contact: sthing@gmail.com</span>
             </ContactLayer>
             <BrandLayer>
                 <Brand>URBAN BOUTIQUE</Brand>
@@ -13,6 +12,6 @@ export const EHeader = () =>{
             <NavbarLayer>
                 <NavBar/>
             </NavbarLayer>
-        </Header>
+        </HeaderContainer>
     );
 }
