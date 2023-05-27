@@ -1,4 +1,4 @@
-import CartWidget from "../CartWidget/CartWidget";
+import { CartWidget } from '../CartWidget/CartWidget'
 import {NavItem, NavLink, NavbarNav} from "./styles.jsx"
 
 const itemsList = [
@@ -39,4 +39,4 @@ const NavBar = () => {
     )
 }
 
-export default NavBar;
+export {NavBar};

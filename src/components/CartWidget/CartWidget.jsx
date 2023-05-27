@@ -1,7 +1,7 @@
 import bag from '../../assets/bag.svg';
 import "./cartWidget.css"
 
-const CartWidget = () => {
+export const CartWidget = () => {
     return (
         <div className='cart-icon'>
             <img src={bag} width="24px" height="24px" alt="img"></img>
@@ -9,5 +9,3 @@ const CartWidget = () => {
         </div>
     )
 }
-
-export default CartWidget;

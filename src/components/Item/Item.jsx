@@ -1,7 +1,7 @@
 import {ItemCard, ItemImage, ItemPrice, ItemTitle, MoreInfoButton} from './styles.jsx';
 import { Link } from 'react-router-dom';
 
-export const Item = ({id, name, img, price, stock, category}) =>{
+const Item = ({id, name, img, price, stock, category}) =>{
     return (
         <ItemCard>
             <ItemImage src={img} alt={name} />
@@ -13,3 +13,5 @@ export const Item = ({id, name, img, price, stock, category}) =>{
         </ItemCard>
     );
 }
+
+export {Item};
