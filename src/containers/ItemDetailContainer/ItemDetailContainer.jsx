@@ -18,7 +18,7 @@ export const ItemDetailContainer = () =>{
 
     return (
         <div>
-            {itemInfo && <ItemDetail img={itemInfo.img} name={itemInfo.name} price={itemInfo.price} />}
+            {itemInfo && <ItemDetail img={itemInfo.img} name={itemInfo.name} price={itemInfo.price} description={itemInfo.description}/>}
         </div>
     );
 }

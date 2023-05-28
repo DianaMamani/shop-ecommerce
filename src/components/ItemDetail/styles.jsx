@@ -1,25 +1,32 @@
 import styled from "styled-components";
 
 export const ProductContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: inline-table;
   align-items: center;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  justify-content: center;
   padding: 20px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+  border: 1px solid #ddd;
+  width: 450px;
+  height: 350px;
+
+`;
+
+export const Aside = styled.div`
+  flex: 1;
 `;
 
 export const ProductImage = styled.img`
-  width: 100%;
-  max-height: 200px;
+  width: 200px;
   object-fit: cover;
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 `;
 
 export const ProductTitle = styled.h3`
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 10px;
 `;
@@ -30,7 +37,7 @@ export const ProductDescription = styled.p`
 `;
 
 export const ProductPrice = styled.h4`
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: #333333;
   margin-bottom: 10px;
