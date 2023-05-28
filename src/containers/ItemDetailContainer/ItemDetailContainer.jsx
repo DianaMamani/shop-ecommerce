@@ -10,7 +10,6 @@ export const ItemDetailContainer = () =>{
     useEffect(() => {
         getProductById(itemId)
             .then((response) =>{
-                console.log("item id", itemId)
                 setItemInfo(response);
             })
             .catch((err => console.log(err)));

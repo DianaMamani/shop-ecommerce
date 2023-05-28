@@ -3,7 +3,6 @@ import { Button, Container, Value } from "./styles";
 export const ItemCount = ({ count, setCount }) => {
 
     const handleIncrement = () => {
-        console.log("sasa", count)
         setCount(count += 1);
     }
 
