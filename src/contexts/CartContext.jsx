@@ -13,8 +13,17 @@ export const CartProvider = ({ children }) => {
     }, [cart]);
 
     const addItem = (item, qty) => {
-        const itemToAdd = {...item, qty};
-        setCart([...cart, itemToAdd]);
+        const itemIndex = cart.findIndex((i) => i.id === item.id);
+
+        if(itemIndex !== -1){
+            const itemsToUpdate = [...cart];
+            itemsToUpdate[itemIndex].qty += qty;
+            setCart(itemsToUpdate);
+        }
+        else{
+            const itemToAdd = {...item, qty};
+            setCart([...cart, itemToAdd]);
+        }
     }
 
     const empty = () => {
@@ -34,9 +43,13 @@ export const CartProvider = ({ children }) => {
     }
 
     const updateQty = (id, qty) => {
-        const item = cart.find((el)=> el.id === id);
-        deleteItem(id);
-        addItem(item, qty);
+        const itemIndex = cart.findIndex((i) => i.id === id);
+
+        if(itemIndex !== -1){
+            const itemsToUpdate = [...cart];
+            itemsToUpdate[itemIndex].qty = qty;
+            setCart(itemsToUpdate);
+        }
     }
 
     const values = 

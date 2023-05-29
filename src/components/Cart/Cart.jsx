@@ -3,12 +3,13 @@ import { TiDeleteOutline } from 'react-icons/ti';
 import { CartContainer, TotalPrice, CartTitle, CartItem, ItemImage, ItemInfo, ItemName, ItemPrice, QuantityInput } from './styles';
 import { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const{total, cart, deleteItem, updateQty} = useContext(CartContext);
 
   const handleQuantityChange = (itemId, newQuantity) => {
-    updateQty(itemId, newQuantity);
+    updateQty(itemId, Number(newQuantity));
   };
 
   const handleDeleteItem = (itemId) => {
@@ -31,6 +32,7 @@ const Cart = () => {
                             </ItemInfo>
                             <QuantityInput
                                 type="number"
+                                min={1}
                                 value={item.qty}
                                 onChange={(e) => handleQuantityChange(item.id, e.target.value)}
                             />
@@ -38,8 +40,11 @@ const Cart = () => {
                         </CartItem>
                     ))}
                     <TotalPrice>Total: ${total()}</TotalPrice>
+                    <button>Terminar Compra</button>
                 </>
-        }</CartContainer>
+        }
+        <Link to="/products"><button>Seguir Comprando</button></Link>
+        </CartContainer>
     );
 };
 
