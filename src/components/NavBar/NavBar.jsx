@@ -1,5 +1,7 @@
+import { useContext } from 'react'
 import { CartWidget } from '../CartWidget/CartWidget'
 import {NavItem, NavLink, NavbarNav} from "./styles.jsx"
+import { CartContext } from '../../contexts/CartContext'
 
 const itemsList = [
     {
@@ -25,6 +27,8 @@ const itemsList = [
 ]
 
 const NavBar = () => {
+    const { cart } = useContext(CartContext);
+
     return (
         <>
             <NavbarNav>
@@ -34,7 +38,7 @@ const NavBar = () => {
                     </NavItem>
                 )}
             </NavbarNav>
-            <CartWidget>2</CartWidget>
+            {cart.length !== 0 ? <CartWidget /> : <></>}
         </>
     )
 }
