@@ -3,12 +3,12 @@ import { ItemCount } from "../ItemCount/ItemCount";
 import { useContext, useState } from "react";
 import { CartContext } from "../../contexts/CartContext";
 
-export const ItemDetail = ({img, name, price, description}) => {
+export const ItemDetail = ({img, name, price, description, id}) => {
     const [count, setCount] = useState(1);
     const { addItem } = useContext(CartContext);
 
     const add = () =>{
-        addItem({name}, count);
+        addItem({id, name, price, img}, count);
     }
 
     return (

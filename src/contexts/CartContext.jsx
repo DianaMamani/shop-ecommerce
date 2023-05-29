@@ -25,12 +25,29 @@ export const CartProvider = ({ children }) => {
         setCart(cart.filter((item) => item.id !== id));
     }
 
+    const calcItemsQty = () => {
+        return cart.reduce((acc, item) => acc + item.qty, 0);
+    }
+
+    const total = () => {
+        return cart.reduce((acc, item) => acc + item.price * item.qty, 0);
+    }
+
+    const updateQty = (id, qty) => {
+        const item = cart.find((el)=> el.id === id);
+        deleteItem(id);
+        addItem(item, qty);
+    }
+
     const values = 
     {
         cart,
         addItem,
         empty,
-        deleteItem
+        deleteItem,
+        calcItemsQty,
+        total,
+        updateQty
     };
 
     return(
