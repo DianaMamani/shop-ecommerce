@@ -19,7 +19,10 @@ const Cart = () => {
     return (
         <CartContainer>{
             cart.length === 0 ?
-                <CartTitle>Tu carrito esta vacío</CartTitle>
+                <>
+                    <CartTitle>Tu carrito esta vacío</CartTitle>
+                    <Link to="/products"><button>Seguir Comprando</button></Link>
+                </>
                 :
                 <>
                     <CartTitle>Tu Carrito</CartTitle>
@@ -40,10 +43,11 @@ const Cart = () => {
                         </CartItem>
                     ))}
                     <TotalPrice>Total: ${total()}</TotalPrice>
+                    <Link to='/checkout'>
                     <button>Terminar Compra</button>
+                    </Link>
                 </>
         }
-        <Link to="/products"><button>Seguir Comprando</button></Link>
         </CartContainer>
     );
 };
