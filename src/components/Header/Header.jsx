@@ -1,13 +1,12 @@
 import { NavBar } from "../NavBar/NavBar";
-import { BrandLayer, ContactLayer, HeaderContainer, Brand, NavbarLayer } from "./styles";
+import { BrandLayer, HeaderContainer, Logo, NavbarLayer } from "./styles";
+import logo from '../../assets/logo.png';
 
 export const Header = () =>{
     return (
         <HeaderContainer>
-            <ContactLayer>
-            </ContactLayer>
-            <BrandLayer>                
-                <Brand to={'/'}>URBAN BOUTIQUE</Brand>
+            <BrandLayer>
+                <Logo src={logo}/>
             </BrandLayer>
             <NavbarLayer>
                 <NavBar/>
