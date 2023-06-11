@@ -54,3 +54,20 @@ export const TotalPrice = styled.p`
   text-align: right;
   margin-top: 20px;
 `;
+
+export const Button = styled.button`
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  background-color: #ddc4c1;
+  color: #fff;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+    background-color: #d6d6d6;
+  }
+`;

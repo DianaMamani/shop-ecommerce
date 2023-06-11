@@ -11,6 +11,7 @@ export const ItemDetail = ({img, name, price, description, id}) => {
     
     const add = () =>{
         addItem({id, name, price, img}, count);
+        setIsClicked(true);
     }
 
     return (
@@ -20,13 +21,20 @@ export const ItemDetail = ({img, name, price, description, id}) => {
                 <ProductTitle>{name}</ProductTitle>
                 <ProductDescription>{description}</ProductDescription>
                 <ProductPrice>${price}</ProductPrice>
-                <ItemCount count={count} setCount={setCount} />
                 {
                     !isClicked ?
-                    <AddCartButton onClick={add}>Agregar al carrito</AddCartButton> :
-                    <Link to='/cart'>
-                        <AddCartButton>Terminar Compra</AddCartButton>
-                    </Link> 
+                        <>
+                            <ItemCount count={count} setCount={setCount} />
+                            <AddCartButton onClick={add}>Agregar al carrito</AddCartButton>
+                        </> :
+                        <>
+                            <Link to='/cart'>
+                                <AddCartButton>Terminar Compra</AddCartButton>
+                            </Link>
+                            <Link to='/products'>
+                                <AddCartButton>Seguir comprando</AddCartButton>
+                            </Link>
+                        </>
                 }
             </Aside>
         </ProductContainer>

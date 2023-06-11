@@ -32,7 +32,7 @@ export const CheckoutForm = () => {
 
   return (
     <FormContainer>
-      <FormTitle>My Form</FormTitle>
+      <FormTitle>Checkout</FormTitle>
       <form onSubmit={handleSubmit}>
         <FormField>
           <Label htmlFor="name">Name:</Label>

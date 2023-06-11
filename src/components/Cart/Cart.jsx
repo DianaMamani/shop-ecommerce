@@ -1,6 +1,6 @@
 import React from 'react';
 import { TiDeleteOutline } from 'react-icons/ti';
-import { CartContainer, TotalPrice, CartTitle, CartItem, ItemImage, ItemInfo, ItemName, ItemPrice, QuantityInput } from './styles';
+import { CartContainer, TotalPrice, CartTitle, CartItem, ItemImage, ItemInfo, ItemName, ItemPrice, QuantityInput, Button } from './styles';
 import { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
 import { Link } from 'react-router-dom';
@@ -21,7 +21,7 @@ const Cart = () => {
             cart.length === 0 ?
                 <>
                     <CartTitle>Tu carrito esta vacío</CartTitle>
-                    <Link to="/products"><button>Seguir Comprando</button></Link>
+                    <Link to="/products"><Button>Seguir Comprando</Button></Link>
                 </>
                 :
                 <>
@@ -44,9 +44,9 @@ const Cart = () => {
                     ))}
                     <TotalPrice>Total: ${total()}</TotalPrice>
                     <Link to='/checkout'>
-                    <button>Terminar Compra</button>
+                    <Button>Terminar Compra</Button>
                     </Link>
-                    <button onClick={() => {empty()}}> Vaciar Carrito</button>
+                    <Button onClick={() => {empty()}}> Vaciar Carrito</Button>
                 </>
         }
         </CartContainer>

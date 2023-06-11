@@ -11,7 +11,7 @@ function App() {
           <Header />
           <Routes>
             <Route path='/' element={<Dashboard />} />
-            <Route path='/products' element={<Categories greeting="Welcome to URBAN-BOUTIQUE" />} />
+            <Route path='/products' element={<Categories greeting="Welcome to URBAN-BOUTIQUE"  />} />
             <Route path='/categories/:id' element={<Categories />} />
             <Route path='/items/:id' element={<Item />} />
             <Route path='/cart' element={<CartPage />} />
