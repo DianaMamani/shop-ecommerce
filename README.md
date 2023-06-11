@@ -14,7 +14,7 @@ tenga todos los productos, la fecha y dar feedback del número de orden.
 
 ## User Flow
 
-![Alt text](show-flow.gif) 
+![Alt text](shop-flow.gif) / ![](shop-flow.gif)
 
 ## Libraries
 
