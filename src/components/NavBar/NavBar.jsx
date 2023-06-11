@@ -16,8 +16,8 @@ const itemsList = [
     },
     {
         id: 4,
-        name: 'CONTACTO',
-        url: '/contacto'
+        name: 'NOSOTROS',
+        url: '/about-us'
     },
 ]
 

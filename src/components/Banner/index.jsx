@@ -1,12 +1,12 @@
 import { Card, CardImg } from "./styles";
 import { Link } from "react-router-dom";
 
-export const Banner = ({img, route}) => {
+export const Banner = ({banner, route, description}) => {
     return (
         <>
-            <Link to={route}>
+            <Link to={`/categories/${route}`}>
                 <Card>
-                    <CardImg src={img} />
+                    <CardImg src={banner} />
                 </Card>
             </Link>
         </>

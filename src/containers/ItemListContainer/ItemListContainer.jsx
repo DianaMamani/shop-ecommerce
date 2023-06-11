@@ -32,7 +32,7 @@ export const ItemListContainer = ({greeting}) => {
 
     return (
         <div>
-            <h1> {greeting || categoryId}</h1>
+            <h1> {greeting || categoryId.toUpperCase()}</h1>
             <ItemList products={products} />
         </div>
     );

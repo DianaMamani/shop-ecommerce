@@ -7,3 +7,4 @@ export { NavBar } from './NavBar/NavBar';
 export { Cart } from './Cart/Cart';
 export { CheckoutForm } from './CheckoutForm/CheckoutForm';
 export { BannerList } from './BannerList';
+export { Brief } from './Brief';

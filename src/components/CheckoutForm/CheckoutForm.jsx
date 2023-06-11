@@ -2,16 +2,55 @@ import React, { useContext, useState } from 'react';
 import { db } from '../../firebase/config';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore/lite';
 import { CartContext } from '../../contexts/CartContext';
-import { FormContainer, FormTitle, FormField, Button, Input, Label } from './styles';
+import { FormContainer, FormField, Input, Label, SubmitButton, ErrorMessage } from './styles';
 import { useNavigate } from 'react-router-dom'
+
+const validateEmail = (email) => {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+};
+
+const validateTelephone = (telephone) => {
+  const regex = /^\d{10}$/;
+  return regex.test(telephone);
+};
+
+const validateForm = (email, confirmEmail, number) => {
+  return (
+    validateEmail(email) &&
+    email === confirmEmail &&
+    validateTelephone(number)
+  );
+};
 
 export const CheckoutForm = () => {
   const {cart, total, empty} = useContext(CartContext);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [number, setNumber] = useState('');
+  const [confirmEmail, setConfirmEmail] = useState('');
+  const [formValid, setFormValid] = useState(false);
 
   const navigate = useNavigate();
+
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+    setFormValid(validateForm(event.target.value, confirmEmail,number));
+  };
+
+  const handleConfirmEmailChange = (event) => {
+    setConfirmEmail(event.target.value);
+    setFormValid(validateForm(email, event.target.value, number));
+  };
+
+  const handleNumberChange = (event) => {
+    setNumber(event.target.value);
+    setFormValid(validateForm(email, confirmEmail, event.target.value));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -34,36 +73,44 @@ export const CheckoutForm = () => {
 
   return (
     <FormContainer>
-      <FormTitle>Checkout</FormTitle>
       <form onSubmit={handleSubmit}>
         <FormField>
-          <Label htmlFor="name">Name:</Label>
+          <Label htmlFor="name">Nombre Completo:</Label>
           <Input
             type="text"
-            id="name"
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={handleNameChange}
+            required
           />
         </FormField>
         <FormField>
           <Label htmlFor="email">Email:</Label>
           <Input
             type="email"
-            id="email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={handleEmailChange}
+            required
+          />
+        </FormField>        
+        <FormField>
+          <Label htmlFor="email">Confirmacion de email:</Label>
+          <Input
+            type="email"
+            value={confirmEmail}
+            onChange={handleConfirmEmailChange}
+            required
           />
         </FormField>
         <FormField>
-          <Label htmlFor="number">Number:</Label>
+          <Label htmlFor="number">Numero:</Label>
           <Input
-            type="number"
-            id="number"
+            type="tel"
             value={number}
-            onChange={(e) => setNumber(e.target.value)}
+            onChange={handleNumberChange}
+            required
           />
         </FormField>
-        <Button type="submit">Submit</Button>
+        <SubmitButton type="submit" disabled={!formValid}>Submit</SubmitButton>
       </form>
     </FormContainer>
   );

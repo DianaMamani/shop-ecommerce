@@ -7,11 +7,6 @@ export const FormContainer = styled.div`
   background-color: #f4f4f4;
 `;
 
-export const FormTitle = styled.h2`
-  font-size: 24px;
-  margin-bottom: 20px;
-`;
-
 export const FormField = styled.div`
   display: flex;
   flex-direction: column;
@@ -19,27 +14,26 @@ export const FormField = styled.div`
 `;
 
 export const Label = styled.label`
-  font-size: 16px;
   margin-bottom: 5px;
 `;
 
 export const Input = styled.input`
-  padding: 10px;
-  font-size: 16px;
+  padding: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
 `;
 
-export const Button = styled.button`
+export const ErrorMessage = styled.span`
+  color: red;
+  margin-top: 5px;
+`;
+
+export const SubmitButton = styled.button`
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
   border-radius: 4px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #45a049;
-  }
+  border: none;
+  background-color: ${(props) => (props.disabled ? '#ccc' : '#4caf50')};
+  color: #fff;
+  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
 `;

@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { CartPage, Categories, Checkout, Dashboard, Item, NotFound, Order } from './pages';
+import { AboutUs, CartPage, Categories, Checkout, Dashboard, Item, NotFound, Order } from './pages';
 import { Header } from './components/Header/Header';
 import { CartProvider } from './contexts/CartContext';
 
@@ -17,6 +17,7 @@ function App() {
             <Route path='/cart' element={<CartPage />} />
             <Route path='/checkout' element={<Checkout />} />
             <Route path='/orders/:id' element={<Order />} />
+            <Route path='/about-us' element={<AboutUs />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
         </CartProvider>
