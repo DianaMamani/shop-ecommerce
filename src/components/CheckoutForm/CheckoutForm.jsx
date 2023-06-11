@@ -3,13 +3,15 @@ import { db } from '../../firebase/config';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore/lite';
 import { CartContext } from '../../contexts/CartContext';
 import { FormContainer, FormTitle, FormField, Button, Input, Label } from './styles';
+import { useNavigate } from 'react-router-dom'
 
 export const CheckoutForm = () => {
   const {cart, total, empty} = useContext(CartContext);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [number, setNumber] = useState('');
-  const [orderId, serOrderId] = useState(null);
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,8 +27,8 @@ export const CheckoutForm = () => {
 
     doc
       .then(response => {
-        console.log(response.id)
         empty();
+        navigate(`/orders/${response.id}`);
       });
   };
 
