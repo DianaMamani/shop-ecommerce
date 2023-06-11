@@ -6,7 +6,7 @@ import { CartContext } from '../../contexts/CartContext';
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
-  const{total, cart, deleteItem, updateQty} = useContext(CartContext);
+  const{total, cart, deleteItem, updateQty, empty} = useContext(CartContext);
 
   const handleQuantityChange = (itemId, newQuantity) => {
     updateQty(itemId, Number(newQuantity));
@@ -46,6 +46,7 @@ const Cart = () => {
                     <Link to='/checkout'>
                     <button>Terminar Compra</button>
                     </Link>
+                    <button onClick={() => {empty()}}> Vaciar Carrito</button>
                 </>
         }
         </CartContainer>

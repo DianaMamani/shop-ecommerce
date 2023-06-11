@@ -15,11 +15,6 @@ const itemsList = [
         url: '/products'
     },
     {
-        id: 3,
-        name: 'REMERAS',
-        url: 'categories/shirts'
-    },
-    {
         id: 4,
         name: 'CONTACTO',
         url: '/contacto'
