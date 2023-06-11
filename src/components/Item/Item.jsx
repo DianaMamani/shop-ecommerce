@@ -5,7 +5,7 @@ const Item = ({id, name, img, price, stock, category}) =>{
     return (
         <ItemCard>
             <ItemImage src={img} alt={name} />
-            <ItemTitle>{name} s</ItemTitle>
+            <ItemTitle>{name}</ItemTitle>
             <ItemPrice>{"$" + price}</ItemPrice>
             <Link to={`/items/${id}`}>
                 <MoreInfoButton>Ver mas</MoreInfoButton>
